@@ -17,7 +17,7 @@ def get_last_page():
 
   for link in links[:-1]:
     pages.append(int(link.string))
-  max_page = pages[-1]
+    max_page = pages[-1]
   return max_page
 
 def extract_job(html):
