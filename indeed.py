@@ -23,10 +23,10 @@ def extract_job(html):
     if company_anchor is not None:
       company = str(company.find("a").string)
     elif company_anchor is None:
-      if str(company.string) is not None:
-        company = str(company.string)
-  if company.strip() is not None:
-    company = company.strip()
+      company = str(company.string)
+  else:
+    company = "회사없음"
+  company = company.strip()
   location = html.find("div", {"class": "recJobLoc"})["data-rc-loc"]
   job_id = html["data-jk"]
   return {
